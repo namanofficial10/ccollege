@@ -4,7 +4,7 @@ int main(){
 
     int a,b;
 
-    printf("------------------------------Logical Operators------------------------------\n");
+    printf("------------------------------Rational Operators------------------------------\n");
 
     printf("Enter First Number:");
     scanf("%d",&a);
