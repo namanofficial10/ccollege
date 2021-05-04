@@ -12,6 +12,11 @@ int main(){
     scanf("%d",&b);
 
     printf("a<b : %d",a<b);
+    printf("b<a : %d",b<a);
+    printf("a<=b : %d",a<=b);
+    printf("b<=a : %d",b<=a);
+    printf("a==b : %d",a==b);
+    printf("a!=b : %d",a!=b);
 
 
 
