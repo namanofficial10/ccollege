@@ -3,8 +3,8 @@
 int main()
 {
 
-    int a,b,c,d,e;
-    float f;
+    int c,d,e;
+    float a,b,f;
 
     printf("------------------------------Operators------------------------------\n");
 
