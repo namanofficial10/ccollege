@@ -2,8 +2,8 @@
 
 int main(){
 
-    int a,b,i;
-    char r;
+    int a,b,i,r;
+    
 
     printf("--------------------Largest Number Calculator--------------------");
 
@@ -26,10 +26,10 @@ int main(){
 
         printf("\nWant to add another number to compare?");
         printf("\nEnter 1 for yes:");
-        scanf("%c",&r);
-        printf("r=%c",r);
+        scanf("%d",&r);
+        
 
-        if(r=="y"){
+        if(r==1){
             i=1;
         }
         else{
