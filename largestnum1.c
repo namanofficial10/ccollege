@@ -26,7 +26,7 @@ int main(){
 
         printf("\nWant to add another number to compare?");
         printf("\nEnter y for yes:");
-        scanf("%s",&n);
+        scanf("%c",&n);
         //printf("r=%c",r);
 
 
