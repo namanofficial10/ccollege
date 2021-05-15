@@ -88,15 +88,18 @@ int main()
 
         if(--player==1){
             score1=score1+1;
-            printf("==>\a%s win!",name1);
+            printf("==>\a%s wins!",name1);
+            player=1;
         }
         else{
             score2=score2+1;
-            printf("==>\a%s win!",name2);
+            printf("==>\a%s wins!",name2);
+            player=2;
         }
     }
     else{
         printf("==>\aGame draw");
+        player=1;
     }
     printf("\nEnter y to play again:");
     scanf("%s",&again);
@@ -118,6 +121,7 @@ int main()
     }
     else{
         printf("Game is Over!\nThanks For Playing\n\nMade By:-\n%cNaman Sharma",126);
+        getch();
         return 0;
     }
 }
@@ -162,6 +166,8 @@ void board()
     system("cls");
     printf("\n\n\tTic Tac Toe\n\n");
 
+    printf("Rules:\n\n1. The game is played on a grid that's 3 squares by 3 squares.\n2. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.\n3. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.\n4. Winning Player will start the next game.\n\n");
+
     printf("%s (X)  -  %s (O)\n\n\n",name1,name2);
     printf("Current Score:\n%s: %d\n%s: %d\n\n",name1,score1,name2,score2);
 
@@ -179,4 +185,3 @@ void board()
     printf("  %c  |  %c  |  %c\n",square[7],square[8],square[9]);
     printf("     |     |     \n\n");
 }
-
