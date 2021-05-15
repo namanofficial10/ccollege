@@ -2,7 +2,7 @@
 #include<windows.h>
 
 int score1=0,score2=0;
-char square[10] = {'0','1','2','3','4','5','6','7','8','9'};
+char square[10] = {'0','1','2','3','4','5','6','7','8','9'},name1[20],name2[20];
 
 int checkwin();
 void board();
@@ -12,6 +12,12 @@ int main()
 	int player = 1,i,choice,a;
 
     char mark,again;
+
+    printf("Enter Name of Player 1:");
+    gets(name1);
+
+    printf("Enter Name of Player 2:");
+    gets(name2);
 
     label:
     do
@@ -23,9 +29,14 @@ int main()
         else{
             player=2;
         }
-
-        printf("Player %d, Enter a Number:",player);
-        scanf("%d",&choice);
+        if(player==1){
+            printf("%s, Enter a Number:",name1);
+            scanf("%d",&choice);
+        }
+        else{
+            printf("%s, Enter a Number:",name2);
+            scanf("%d",&choice);
+        }
 
         if(player==1){
             mark='X';
@@ -74,12 +85,14 @@ int main()
     }while(i==-1);
     board();
     if(i==1){
-        printf("==>\aPlayer %d win!",--player);
+
         if(--player==1){
-            score2=score2+1;
+            score1=score1+1;
+            printf("==>\a%s win!",name1);
         }
         else{
-            score1=score1+1;
+            score2=score2+1;
+            printf("==>\a%s win!",name2);
         }
     }
     else{
@@ -149,8 +162,8 @@ void board()
     system("cls");
     printf("\n\n\tTic Tac Toe\n\n");
 
-    printf("Player 1 (X)  -  Player 2 (O)\n\n\n");
-    printf("Current Score:\nPlayer 1: %d\nPlayer 2: %d\n\n",score1,score2);
+    printf("%s (X)  -  %s (O)\n\n\n",name1,name2);
+    printf("Current Score:\n%s: %d\n%s: %d\n\n",name1,score1,name2,score2);
 
     printf("     |     |     \n");
     printf("  %c  |  %c  |  %c\n",square[1],square[2],square[3]);
