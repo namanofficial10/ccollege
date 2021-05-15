@@ -1,16 +1,19 @@
 #include<stdio.h>
 #include<windows.h>
 
-char square[10] = {'o','1','2','3','4','5','6','7','8','9'};
+int score1=0,score2=0;
+char square[10] = {'0','1','2','3','4','5','6','7','8','9'};
 
 int checkwin();
 void board();
 
 int main()
 {
-	int player = 1,i,choice;
+	int player = 1,i,choice,a;
 
-    char mark;
+    char mark,again;
+
+    label:
     do
     {
         board();
@@ -61,8 +64,8 @@ int main()
         }
         else
         {
-            printf("Invalid move");
-            Sleep(5000);
+            printf("Invalid move!Try Again!");
+            Sleep(750);
             player--;
         }
         i=checkwin();
@@ -72,11 +75,38 @@ int main()
     board();
     if(i==1){
         printf("==>\aPlayer %d win!",--player);
+        if(--player==1){
+            score2=score2+1;
+        }
+        else{
+            score1=score1+1;
+        }
     }
     else{
         printf("==>\aGame draw");
     }
-    return 0;
+    printf("\nEnter y to play again:");
+    scanf("%s",&again);
+
+
+    if(again=='y' || again=='Y'){
+
+        square[0]='0';
+        square[1]='1';
+        square[2]='2';
+        square[3]='3';
+        square[4]='4';
+        square[5]='5';
+        square[6]='6';
+        square[7]='7';
+        square[8]='8';
+        square[9]='9';
+        goto label;
+    }
+    else{
+        printf("Game is Over!\nThanks For Playing\n\nMade By:-\n%cNaman Sharma",126);
+        return 0;
+    }
 }
 
 int checkwin()
@@ -120,7 +150,7 @@ void board()
     printf("\n\n\tTic Tac Toe\n\n");
 
     printf("Player 1 (X)  -  Player 2 (O)\n\n\n");
-
+    printf("Current Score:\nPlayer 1: %d\nPlayer 2: %d\n\n",score1,score2);
 
     printf("     |     |     \n");
     printf("  %c  |  %c  |  %c\n",square[1],square[2],square[3]);
