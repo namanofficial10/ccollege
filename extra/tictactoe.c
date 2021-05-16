@@ -99,7 +99,12 @@ int main()
     }
     else{
         printf("==>\aGame draw");
-        player=1;
+        if(--player==1){
+            player=2;
+        }
+        else{
+            player=1;
+        }
     }
     printf("\nEnter y to play again:");
     scanf("%s",&again);
